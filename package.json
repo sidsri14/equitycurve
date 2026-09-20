@@ -1,0 +1,38 @@
+{
+  "name": "equitycurve",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "pnpm": {
+    "overrides": {
+      "rpc-websockets": "9.3.10",
+      "@solana/web3.js": "1.99.0"
+    }
+  },
+  "dependencies": {
+    "@meteora-ag/dynamic-bonding-curve-sdk": "^1.0.0",
+    "@pythnetwork/client": "^2.22.1",
+    "@pythnetwork/pyth-solana-receiver": "^0.16.0",
+    "@solana/spl-token": "^0.4.9",
+    "@solana/web3.js": "^1.95.8",
+    "bn.js": "^5.2.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "undici": "^8.10.2"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tsx": "^4.23.13",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}
