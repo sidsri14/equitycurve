@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EquityCurve - Meteora DBC Track</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; color: #0f172a; font-size: 10pt; line-height: 1.4; }
+  .page { width: 11in; height: 8.5in; padding: 0.45in 0.5in; background: #fff; position: relative; overflow: hidden; }
+  .accent { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg,#10b981,#3b82f6); }
+  h1 { font-size: 24pt; letter-spacing: -0.02em; }
+  .sub { font-size: 12pt; color: #0d9488; font-weight: 700; margin-top: 2px; }
+  .tag { display: inline-block; background: #ecfdf5; color: #047857; font-weight: 700; font-size: 8.5pt; padding: 2px 10px; border-radius: 999px; margin-top: 10px; }
+  h2 { font-size: 10.5pt; margin: 14px 0 4px; text-transform: uppercase; letter-spacing: .04em; color: #0f172a; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .card { border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 8.5pt; }
+  td, th { border: 1px solid #e2e8f0; padding: 3px 6px; text-align: left; }
+  th { background: #f1f5f9; }
+  code { background: #f1f5f9; padding: 0 3px; border-radius: 3px; font-size: 8.5pt; }
+  li { margin-left: 16px; margin-bottom: 2px; }
+  .foot { position: absolute; bottom: 0.3in; left: 0.5in; right: 0.5in; font-size: 8pt; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 6px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="accent"></div>
+  <h1>EquityCurve</h1>
+  <div class="sub">Pyth-anchored tokenized-stock launches on Meteora's Dynamic Bonding Curve.</div>
+  <div><span class="tag">Best Use of Meteora DBC · CWF side-track · $20K USDC · Live on mainnet</span></div>
+
+  <h2>The Thesis</h2>
+  <p>Tokenized equities launch at the wrong price and nobody trusts the pool. EquityCurve makes the <b>Dynamic Bonding Curve</b> the launch mechanism for synthetic stocks by pinning the curve's start price to <b>oracle fair value</b> — so the first swap prints the token exactly where Pyth says the asset trades, then climbs to the migration price.</p>
+
+  <h2>Real DBC Usage (live, not a mock)</h2>
+  <div class="grid2">
+    <div class="card"><b>Fair-Value Monitor</b><br>
+      Reads live DBC virtual pools straight from the <code>dbcij3LWUppWqq96dh6gJWwBifmcGfLSB5D4DuSMaqN</code> program; derives spot via on-chain sqrt price; converts to USD with the on-chain SOL/USD push feed; shows premium/discount vs Pyth + migration progress.
+    </div>
+    <div class="card"><b>Curve Studio</b><br>
+      Enter a ticker → live reference quote → supply/decimal/fee params → generate a full <code>DBC ConfigParameters</code> via <code>buildCurveWithCustomSqrtPrices</code> — start price pinned so the first swap prints the token at Pyth fair value.
+    </div>
+  </div>
+
+  <h2>How the DBC is original</h2>
+  <ul>
+    <li>Uses <code>@meteora-ag/dynamic-bonding-curve-sdk</code> against <b>real mainnet pools</b> (ASTROCOW/USDC, scade/SOL) — no testnet, no mock states.</li>
+    <li>Curve config tuned for equity-like assets: oracle-pinned start sqrt price, fees and migration parameters exposed for judgment.</li>
+    <li>Price layer is Pyth-native: 46 on-chain push feeds decoded from raw account bytes (zero RPC key) + Hermes equity feed IDs + PreStocks REST fallback.</li>
+  </ul>
+
+  <h2>Why We Win This Track</h2>
+  <ul>
+    <li>Directly and only about the DBC: launches, monitors, and prices them — the track's exact ask.</li>
+    <li><b>Working mainnet reads</b> of the DBC program today; deployable curve config generation.</li>
+    <li>Only ~5 submissions at check — first-mover visibility.</li>
+  </ul>
+
+  <div class="foot">github.com/sidsri14/equitycurve · live: equitycurve.vercel.app · Meteora DBC track, CWF 2026</div>
+</div>
+</body>
+</html>
