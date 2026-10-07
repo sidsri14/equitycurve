@@ -29,7 +29,7 @@ Best Use of Meteora's Dynamic Bonding Curve (CWF side-track, $20K pool).
 https://github.com/sidsri14/equitycurve
 
 ## Live demo
-https://equitycurve.vercel.app — (Curve Studio + Fair-Value Monitor tabs)
+https://sidsri14.github.io/equitycurve/ — (Curve Studio + Fair-Value Monitor tabs)
 
 ## Demo video
 docs/frames/equitycurve-meteora-demo.mp4 — 45.6s, 1920×1080, in repo (proof walkthrough:

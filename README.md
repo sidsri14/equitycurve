@@ -41,7 +41,7 @@ pnpm build    # typecheck + production build
 
 ## Live demo
 
-Vercel: `https://equitycurve.vercel.app` (deploy from this repo)
+`https://sidsri14.github.io/equitycurve/`
 
 Track notes for judges:
 1. **Meteora DBC** — real mainnet pool reads + original curve config generation anchored to Pyth (Curve Studio / Fair-Value Monitor tabs).
